@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Шивр | Профиль OSINT & Дизайнер</title>
+    <!-- Подключение Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Настройка шрифта Inter для всего документа */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d1117; /* Тёмный фон */
+            color: #e5e7eb; /* Светлый текст */
+            overflow-x: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            
+            /* БЛОКИРОВКА КОПИРОВАНИЯ/ВЫДЕЛЕНИЯ ТЕКСТА */
+            -webkit-user-select: none; 
+            -moz-user-select: none; 
+            -ms-user-select: none; 
+            user-select: none; 
+        }
+
+        /* Пользовательская анимация для свечения текста */
+        @keyframes neon-glow {
+            0%, 100% {
+                text-shadow: 0 0 5px #1e90ff, 0 0 10px #1e90ff, 0 0 20px #00FFFF, 0 0 30px #00FFFF;
+            }
+            50% {
+                text-shadow: 0 0 10px #1e90ff, 0 0 20px #1e90ff, 0 0 40px #00FFFF, 0 0 60px #00FFFF;
+            }
+        }
+
+        .neon-title {
+            animation: neon-glow 1.5s ease-in-out infinite alternate;
+        }
+
+        /* Анимация появления для карточек */
+        @keyframes fade-in-up {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animated-card {
+            animation: fade-in-up 0.6s ease-out forwards;
+            opacity: 0; /* Начальное состояние */
+            background: rgba(17, 24, 39, 0.6); /* Полупрозрачный фон для карточек */
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(31, 41, 55, 0.8);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3), 0 10px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .animated-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 8px 10px rgba(0, 0, 0, 0.4), 0 15px 25px rgba(30, 144, 255, 0.3);
+        }
+
+        /* Задержки для последовательного появления */
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+        .delay-4 { animation-delay: 0.8s; }
+        .delay-5 { animation-delay: 1.0s; } /* Новая задержка для списка кентов */
+
+        /* Стиль для линии-разделителя */
+        .neon-divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #1e90ff, #00FFFF, #1e90ff, transparent);
+            box-shadow: 0 0 5px #1e90ff, 0 0 10px #00FFFF;
+        }
+    </style>
+</head>
+<body class="p-4 sm:p-8">
+
+    <div class="w-full max-w-5xl mx-auto">
+        <!-- Главный Анимированный Заголовок -->
+        <header class="text-center mb-12 pt-8">
+            <h1 class="text-6xl sm:text-7xl font-extrabold tracking-tight text-white mb-2 neon-title">
+                ШИВР
+            </h1>
+            <p class="text-2xl sm:text-3xl text-gray-400 font-light italic">
+                // БИО ШИВРА //
+            </p>
+            <div class="neon-divider w-1/3 mx-auto mt-4"></div>
+        </header>
+
+        <!-- Основной Контент (Сетка Карточек) -->
+        <main class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <!-- 1. Имя и Клан -->
+            <div class="animated-card delay-1 p-6 rounded-xl col-span-full lg:col-span-1">
+                <div class="text-center">
+                    <h2 class="text-xl font-semibold mb-2 text-[#00FFFF]">
+                        <span class="text-2xl block mb-1">Идентификатор</span>
+                        SHIVR
+                    </h2>
+                    <p class="text-4xl font-bold text-white mb-4">
+                        Шивр
+                    </p>
+                    <div class="neon-divider w-1/2 mx-auto mb-4"></div>
+                    <p class="text-lg text-gray-300">
+                        <span class="block text-[#1e90ff] font-medium">Клан</span>
+                        <span class="text-2xl font-extrabold tracking-wider">ECLIPSE</span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- 2. Вступление в КМ -->
+            <div class="animated-card delay-2 p-6 rounded-xl">
+                <h3 class="text-lg font-semibold mb-3 text-[#1e90ff] flex items-center">
+                    <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                    Начало Операций
+                </h3>
+                <p class="text-5xl font-extrabold text-[#00FFFF] mb-3">
+                    2021
+                </p>
+                <p class="text-sm text-gray-400">
+                    Год вступления в структуру КМ (Кибер-Миссия/Команда).
+                </p>
+            </div>
+
+            <!-- 3. Основная Каста (OSINT) -->
+            <div class="animated-card delay-3 p-6 rounded-xl">
+                <h3 class="text-lg font-semibold mb-3 text-[#1e90ff] flex items-center">
+                    <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                    Основная Каста
+                </h3>
+                <p class="text-5xl font-extrabold text-[#00FFFF] mb-3">
+                    OSIНТ
+                </p>
+                <p class="text-sm text-gray-400">
+                    Специалист по сбору и анализу информации из открытых источников. Ключевой разведчик.
+                </p>
+            </div>
+
+            <!-- 4. Дополнительная Роль (Дизайнер) -->
+            <div class="animated-card delay-4 p-6 rounded-xl col-span-full md:col-span-1 lg:col-span-1">
+                <h3 class="text-lg font-semibold mb-3 text-[#1e90ff] flex items-center">
+                    <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                    Доп. Роль
+                </h3>
+                <p class="text-5xl font-extrabold text-[#00FFFF] mb-3">
+                    Дизайнер
+                </p>
+                <p class="text-sm text-gray-400">
+                    Ответственный за визуальное оформление, интерфейсы и создание уникального стиля.
+                </p>
+            </div>
+            
+            <!-- 5. Миссия и Мотивация (Главная Карта) -->
+            <div class="animated-card delay-3 p-8 rounded-xl col-span-full md:col-span-2 lg:col-span-2">
+                <h3 class="text-2xl font-extrabold mb-4 text-[#1e90ff] uppercase tracking-wider text-center">
+                    <span class="neon-title text-3xl block mb-1">Мандат & Цель</span>
+                    <div class="neon-divider w-1/4 mx-auto mt-2"></div>
+                </h3>
+                
+                <div class="space-y-4 text-center">
+                    <p class="text-xl font-medium text-white">
+                        Мотивация Шивра для вступления в КМ:
+                    </p>
+                    <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-8">
+                        
+                        <!-- Блок 1: Защита -->
+                        <div class="flex items-center justify-center p-3 bg-blue-900/30 rounded-lg border-l-4 border-[#00FFFF]">
+                            <svg class="w-8 h-8 mr-3 text-[#00FFFF]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.185-2.053-.512-3.04z"></path></svg>
+                            <span class="text-2xl font-bold text-white">
+                                Защищать мирных
+                            </span>
+                        </div>
+                        
+                        <!-- Блок 2: Помощь -->
+                        <div class="flex items-center justify-center p-3 bg-blue-900/30 rounded-lg border-l-4 border-[#1e90ff]">
+                            <svg class="w-8 h-8 mr-3 text-[#1e90ff]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20v-2c0-.523-.27-1.138-.804-1.628L13 13m0 0a1 1 0 00-2 0l-3 3.5m4-6.5h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <span class="text-2xl font-bold text-white">
+                                Помогать кентам
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Измененный текст -->
+                <p class="mt-6 text-base text-gray-400 italic text-center">
+                    "Решил, что могу использовать свои навыки для защиты тех, кто не может постоять за себя."
+                </p>
+            </div>
+
+            <!-- 6. Соратники (Кенты) - Новая карточка -->
+            <div class="animated-card delay-5 p-8 rounded-xl col-span-full">
+                <h3 class="text-2xl font-extrabold mb-5 text-center text-[#00FFFF] uppercase tracking-wider">
+                    СОРАТНИКИ / КЕНТЫ
+                    <div class="neon-divider w-1/6 mx-auto mt-2"></div>
+                </h3>
+                
+                <!-- АДАПТИВНАЯ СЕТКА: 1 колонка на мобильном, 3 колонки на планшете/десктопе -->
+                <!-- Класс grid-cols-1 гарантирует, что на мобильном каждый ник займет всю ширину -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+                    
+                    <!-- text-lg для мобильных (по умолчанию), md:text-xl для больших экранов -->
+                    <p class="text-lg md:text-xl font-bold text-gray-200 p-2 bg-blue-900/20 rounded-md border border-[#1e90ff]/50 hover:bg-blue-800/30 transition duration-200">@y2nww</p>
+                    <p class="text-lg md:text-xl font-bold text-gray-200 p-2 bg-blue-900/20 rounded-md border border-[#1e90ff]/50 hover:bg-blue-800/30 transition duration-200">@vklvl</p>
+                    <p class="text-lg md:text-xl font-bold text-gray-200 p-2 bg-blue-900/20 rounded-md border border-[#1e90ff]/50 hover:bg-blue-800/30 transition duration-200">@metaminov</p>
+                    
+                    <p class="text-lg md:text-xl font-bold text-gray-200 p-2 bg-blue-900/20 rounded-md border border-[#1e90ff]/50 hover:bg-blue-800/30 transition duration-200">@strekozaaq</p>
+                    <p class="text-lg md:text-xl font-bold text-gray-200 p-2 bg-blue-900/20 rounded-md border border-[#1e90ff]/50 hover:bg-blue-800/30 transition duration-200">@instalvl</p>
+                    <p class="text-lg md:text-xl font-bold text-gray-200 p-2 bg-blue-900/20 rounded-md border border-[#1e90ff]/50 hover:bg-blue-800/30 transition duration-200">@pvpscan</p>
+                    
+                    <p class="text-lg md:text-xl font-bold text-gray-200 p-2 bg-blue-900/20 rounded-md border border-[#1e90ff]/50 hover:bg-blue-800/30 transition duration-200">@fropis</p>
+                    <p class="text-lg md:text-xl font-bold text-gray-200 p-2 bg-blue-900/20 rounded-md border border-[#1e90ff]/50 hover:bg-blue-800/30 transition duration-200">@money6ot</p>
+                    <!-- НОВЫЙ КЕНТ -->
+                    <p class="text-lg md:text-xl font-bold text-gray-200 p-2 bg-blue-900/20 rounded-md border border-[#1e90ff]/50 hover:bg-blue-800/30 transition duration-200">@KrovaviyOfficial</p>
+                </div>
+            </div>
+
+        </main>
+        
+        <!-- Нижний Колонтитул/Подвал с Системой -->
+        <footer class="mt-12 text-center text-xs text-gray-600 border-t border-gray-700/50 pt-4">
+            <p>
+                by шивр
+            </p>
+        </footer>
+    </div>
+
+</body>
+</html>
